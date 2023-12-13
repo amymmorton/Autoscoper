@@ -76,7 +76,7 @@
 
 static bool firstRun = true;
 
-#define DEBUG 0
+#define DEBUG 1
 
 // XXX
 // Set callback for Downhill Simplex. This is really a hack so that we can use
@@ -128,7 +128,7 @@ namespace xromm {
     #ifdef __APPLE__
   sprintf(filename,"/Users/bardiya/autoscoper-v2/debug/image_cam%02d.pgm",count++);
     #elif _WIN32
-    sprintf(filename,"C:/Users/anthony.lombardi/Desktop/viewport-clip-test/image_cam%02d.pgm",count++);
+    sprintf(filename,"C:/A/debug/image_cam%02d.pgm",count++);
     #endif
 
     std::cout << filename << std::endl;
@@ -720,7 +720,7 @@ std::vector <double> Tracker::trackFrame(unsigned int volumeID, double* xyzypr) 
 
 #if DEBUG
       save_debug_image(rendered_drr_, render_width, render_height);
-      //save_debug_image(rendered_rad_, render_width, render_height);
+      save_debug_image(rendered_rad_, render_width, render_height);
       //save_debug_image(drr_mask_, render_width, render_height);
       //save_debug_image(background_mask_, render_width, render_height);
 #endif
